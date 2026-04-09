@@ -2303,79 +2303,86 @@ footer {
         margin-top: 5px !important;
     }
 }
-
-/* --- THE ULTIMATE CENTERING & AMPERSAND FIX --- */
+/* --- THE ULTIMATE MOBILE BOX & LAYOUT FIX --- */
 @media (max-width: 650px) {
-    /* 1. Stack the Names vertically and fix invisible '&' */
+
+    /* 1. Fix the Overlapping Grid (Removes that -150px gap from desktop) */
+    .grid, .square-grid, .details-section .grid {
+        margin-top: 0 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 30px !important;
+        width: 100% !important;
+    }
+
+    /* 2. Fix the Box Size (Making them wide and readable) */
+    .luxury-card, .pillar-frame, .info-card.luxury-border, .witness-frame {
+        width: 95% !important; /* Uses almost full screen width */
+        max-width: 100% !important;
+        margin: 0 auto !important;
+        /* THE CRITICAL FIX: Shorter padding so the text isn't squeezed */
+        padding: 40px 20px !important; 
+        box-sizing: border-box !important;
+    }
+
+    /* 3. Adjust Typography inside the boxes */
+    .luxury-card .time {
+        font-size: 2rem !important;
+        margin-bottom: 10px !important;
+    }
+
+    .luxury-card .venue-name {
+        font-size: 0.9rem !important;
+        min-height: auto !important; /* Removes extra tall spacing */
+        margin-bottom: 30px !important;
+    }
+
+    /* 4. Fix Names and invisible Ampersand */
     .couple-names {
         display: flex !important;
         flex-direction: column !important;
         align-items: center !important;
         font-size: 3.2rem !important;
         line-height: 1.1 !important;
-        background: none !important; /* Removes shimmer transparency glitch */
+        background: none !important;
     }
 
-    .couple-names .fname {
+    .fname {
         background: var(--gold-gradient);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         display: block;
     }
 
-    .couple-names .amp {
+    .amp {
         display: block !important;
         font-family: 'Montserrat', sans-serif !important;
-        font-size: 1.4rem !important;
+        font-size: 1.5rem !important;
         margin: 5px 0 !important;
-        color: var(--gold) !important; /* FORCES SOLID COLOR */
-        -webkit-text-fill-color: var(--gold) !important; 
+        color: var(--gold) !important;
+        -webkit-text-fill-color: var(--gold) !important;
         opacity: 1 !important;
     }
 
-    /* 2. Fix the Countdown numbers fitting on one line */
+    /* 5. Fix Countdown to stay on 1 line */
     .glass-wrapper {
-        width: 95% !important;
-        padding: 15px 5px !important;
-        margin: 20px auto !important;
+        width: 98% !important;
+        padding: 15px 2px !important;
     }
 
     .count-item span {
-        font-size: 1.5rem !important;
-        font-weight: 400 !important;
+        font-size: 1.4rem !important;
     }
 
-    /* 3. Center the Sponsors/Parents/Witnesses Boxes */
-    .pillars-row, .square-grid, .grid {
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        width: 100% !important;
-    }
-
-    .pillar-frame, .info-card.luxury-border, .luxury-card, .witness-frame {
-        width: 90% !important;
-        max-width: 400px !important;
-        margin: 0 auto 20px !important;
-        padding: 30px 15px !important;
-    }
-
-    /* 4. Fix Dress Code Image scale */
-    .attire-image {
-        width: 100% !important;
-        transform: scale(1.0) !important;
-        margin: 0 !important;
-    }
-
-    /* 5. Center all titles */
-    .foil-title, .section-title, .section-subtitle, .script-subtitle {
-        text-align: center !important;
-        letter-spacing: 3px !important;
-        width: 100%;
+    /* 6. Clean up Titles */
+    .section-title {
+        font-size: 1.8rem !important;
+        letter-spacing: 4px !important;
     }
 }
 
-/* Ensure no horizontal wobbling */
+/* Safety fix for horizontal scroll */
 html, body {
     overflow-x: hidden !important;
     width: 100% !important;
