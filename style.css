@@ -2303,3 +2303,80 @@ footer {
         margin-top: 5px !important;
     }
 }
+
+/* --- THE ULTIMATE CENTERING & AMPERSAND FIX --- */
+@media (max-width: 650px) {
+    /* 1. Stack the Names vertically and fix invisible '&' */
+    .couple-names {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        font-size: 3.2rem !important;
+        line-height: 1.1 !important;
+        background: none !important; /* Removes shimmer transparency glitch */
+    }
+
+    .couple-names .fname {
+        background: var(--gold-gradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        display: block;
+    }
+
+    .couple-names .amp {
+        display: block !important;
+        font-family: 'Montserrat', sans-serif !important;
+        font-size: 1.4rem !important;
+        margin: 5px 0 !important;
+        color: var(--gold) !important; /* FORCES SOLID COLOR */
+        -webkit-text-fill-color: var(--gold) !important; 
+        opacity: 1 !important;
+    }
+
+    /* 2. Fix the Countdown numbers fitting on one line */
+    .glass-wrapper {
+        width: 95% !important;
+        padding: 15px 5px !important;
+        margin: 20px auto !important;
+    }
+
+    .count-item span {
+        font-size: 1.5rem !important;
+        font-weight: 400 !important;
+    }
+
+    /* 3. Center the Sponsors/Parents/Witnesses Boxes */
+    .pillars-row, .square-grid, .grid {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        width: 100% !important;
+    }
+
+    .pillar-frame, .info-card.luxury-border, .luxury-card, .witness-frame {
+        width: 90% !important;
+        max-width: 400px !important;
+        margin: 0 auto 20px !important;
+        padding: 30px 15px !important;
+    }
+
+    /* 4. Fix Dress Code Image scale */
+    .attire-image {
+        width: 100% !important;
+        transform: scale(1.0) !important;
+        margin: 0 !important;
+    }
+
+    /* 5. Center all titles */
+    .foil-title, .section-title, .section-subtitle, .script-subtitle {
+        text-align: center !important;
+        letter-spacing: 3px !important;
+        width: 100%;
+    }
+}
+
+/* Ensure no horizontal wobbling */
+html, body {
+    overflow-x: hidden !important;
+    width: 100% !important;
+}
