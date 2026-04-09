@@ -2387,3 +2387,84 @@ html, body {
     overflow-x: hidden !important;
     width: 100% !important;
 }
+
+/* --- MOBILE UI REFINEMENT (The Final Polish) --- */
+@media (max-width: 600px) {
+    
+    /* 1. Fix the Overlay (Landing Page) Tagline */
+    .invite-taglineline {
+        letter-spacing: 2px !important; /* Reduced from 4px so it fits */
+        font-size: 0.65rem !important;
+        white-space: nowrap !important; /* FORCES "OF" TO STAY ON THE SAME LINE */
+        margin-bottom: 15px !important;
+        display: block;
+        width: 100%;
+    }
+
+    .invite-names-main {
+        font-size: 3.2rem !important;
+        line-height: 1.2 !important;
+        margin-bottom: 10px !important;
+    }
+
+    /* 2. Fix the Hero Section Taglines */
+    .top-tagline, .sub-tagline {
+        letter-spacing: 2px !important; /* Reduced from 0.6em */
+        font-size: 0.7rem !important;
+        white-space: nowrap !important; /* FORCES "OF" TO STAY ON THE SAME LINE */
+        opacity: 0.9;
+    }
+
+    /* 3. Fix the "Broken" font overlap for names */
+    .couple-names {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        font-size: 3.8rem !important;
+        line-height: 1.2 !important; /* Increased for breathing room */
+        margin: 15px 0 !important;
+        background: none !important;
+    }
+
+    .couple-names span.fname {
+        display: block;
+        padding: 5px 0;
+    }
+
+    .couple-names span.amp {
+        font-size: 1.5rem !important;
+        margin: 5px 0 !important;
+        color: var(--gold) !important;
+        -webkit-text-fill-color: var(--gold) !important;
+        opacity: 1 !important;
+    }
+
+    /* 4. Fix Countdown Box and alignment */
+    .glass-wrapper {
+        width: 95% !important;
+        padding: 20px 5px !important;
+        margin: 25px auto !important;
+        border-radius: 15px !important;
+    }
+
+    .countdown-row {
+        gap: 0 !important;
+        justify-content: space-evenly !important;
+    }
+
+    .count-item span {
+        font-size: 1.6rem !important;
+    }
+
+    .divider {
+        font-size: 1rem !important;
+        opacity: 0.3;
+        margin-top: -10px;
+    }
+
+    /* 5. Fix the Ceremony/Reception Box Sizing */
+    .luxury-card {
+        padding: 40px 20px !important;
+        width: 92% !important;
+    }
+}
