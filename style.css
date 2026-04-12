@@ -2561,6 +2561,54 @@ html, body {
 }
 
 /* MOBILE FIXES */
+
+/* --- ENTOURAGE WITNESS SECTION MOBILE FIX --- */
+@media (max-width: 600px) {
+    /* 1. Ensure the section stacks vertically and has enough breathing room */
+    .e-witness-section {
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 40px !important; /* Space between Best Man and Maid of Honor */
+        margin-bottom: 60px !important;
+    }
+
+    .e-member-highlight {
+        width: 100% !important;
+        padding: 0 !important;
+    }
+
+    /* 2. Scale down the Golden Role titles (Best Man / MOH) */
+    .e-script-gold {
+        font-size: 1.8rem !important; /* Smaller but still elegant */
+        margin-bottom: 2px !important; /* Bring title closer to name */
+        letter-spacing: 1px;
+    }
+
+    /* 3. Scale down the Large Names and prevent loop clipping */
+    .e-name-lg {
+        font-size: 2.6rem !important; /* Balanced size for names */
+        line-height: 1.2 !important;
+        padding: 10px 0 !important; /* Critical: gives room for cursive loops */
+        margin: 0 !important;
+        display: block;
+    }
+
+    /* 4. Tighten the Divider between groups if you have one */
+    .e-diamond-divider {
+        display: none !important; /* Hide the diamond on mobile to save vertical space */
+    }
+}
+
+/* Specific fix for extremely small screens (iPhone SE) */
+@media (max-width: 380px) {
+    .e-script-gold {
+        font-size: 1.6rem !important;
+    }
+    .e-name-lg {
+        font-size: 2.2rem !important;
+    }
+}
+
 @media (max-width: 850px) {
     .e-flex-row, .e-witness-section { flex-direction: column; align-items: center; gap: 60px; }
     .e-name { font-size: 1.8rem; }
