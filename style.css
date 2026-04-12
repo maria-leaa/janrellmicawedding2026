@@ -55,7 +55,6 @@ canvas {
 /* --- ROYAL INVITATION OVERLAY --- */
 body.no-scroll {
     overflow: hidden;
-    /* Prevents scrolling until opened */
 }
 
 .invitation-overlay {
@@ -130,6 +129,49 @@ body.no-scroll {
     font-size: 0.85rem;
     letter-spacing: 4px;
     margin-bottom: 50px;
+}
+
+/* --- MOBILE FIX FOR LANDING OVERLAY --- */
+@media (max-width: 600px) {
+    /* Prevents "OF" from wrapping to a new line */
+    .invite-taglineline {
+        font-size: 0.55rem !important; 
+        letter-spacing: 2px !important;
+        white-space: nowrap; 
+        margin-bottom: 15px !important;
+    }
+
+    /* Prevents the cursive names from being cut off at the top/bottom */
+    .invite-names-main {
+        font-size: 2.8rem !important;
+        line-height: 1.4 !important; 
+        margin-bottom: 5px !important;
+        padding: 5px 0;
+    }
+
+    /* Scales down the divider for narrow screens */
+    .seal-divider {
+        gap: 10px !important;
+        margin-bottom: 15px !important;
+    }
+
+    .seal-divider .line {
+        width: 30px !important;
+    }
+
+    /* Adjusts date/location spacing */
+    .invite-date-loc {
+        font-size: 0.7rem !important;
+        letter-spacing: 2px !important;
+        margin-bottom: 40px !important;
+    }
+}
+
+/* Extra fix for very narrow phones (iPhone SE) */
+@media (max-width: 350px) {
+    .invite-names-main {
+        font-size: 2.4rem !important;
+    }
 }
 
 /* Elegant Open Button */
@@ -436,23 +478,81 @@ body.no-scroll {
     width: 100%;
 }
 
-.couple-names {
+/* .couple-names {
     font-family: 'Great Vibes', cursive;
     font-size: clamp(4rem, 12vw, 9rem);
     margin: 15px 0;
-    /* FIX: Increased line-height and added padding so top/bottom of letters aren't cut */
+  
     line-height: 1.4;
     padding: 10px 0;
     filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
 }
+
 
 .couple-names span.amp {
     font-family: 'Montserrat', sans-serif;
     font-size: 1.5rem;
     margin: 0 10px;
     opacity: 0.8;
+} */
+
+/* --- THE BEAUTIFUL COUPLE LOGO --- */
+
+.couple-names {
+    font-size: clamp(4.5rem, 11vw, 9rem); 
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    gap: 0.3em;              /* Increased gap for elegance */
+    margin: 10px 0;
+    line-height: 1.4;        
+    padding: 20px 0;
+    width: 100%;
 }
 
+.fname {
+    font-family: 'Great Vibes', cursive;
+    display: inline-block;
+}
+
+.amp {
+    /* The "Beautiful" Ampersand Fix */
+    font-family: 'Playfair Display', serif; 
+    font-style: italic;       /* Italic serif is the secret to a beautiful '&' */
+    font-size: 0.5em;         /* Perfectly scaled to sit between the names */
+    font-weight: 400;
+    color: var(--gold) !important;
+    -webkit-text-fill-color: var(--gold) !important; 
+    opacity: 0.9;
+    
+    /* Manual alignment nudge */
+    display: inline-block;
+    transform: translateY(0.15em); 
+    padding: 0 10px;
+}
+
+/* --- MOBILE HERO FIX --- */
+@media (max-width: 600px) {
+    .couple-names {
+        flex-direction: column; 
+        font-size: 3.8rem !important; 
+        gap: 0;
+        line-height: 1;
+        padding: 40px 0;
+    }
+
+    .fname {
+        padding: 10px 0;
+    }
+
+    .amp {
+        font-size: 1.8rem !important; 
+        transform: none;              /* Reset nudge when stacked */
+        margin: -5px 0 5px 0 !important;
+        display: block;
+        opacity: 0.8;
+    }
+}
 .top-tagline,
 .sub-tagline {
     letter-spacing: 0.6em;
@@ -733,13 +833,11 @@ footer {
 
 .details-section {
     background-color: #fdfaf5;
-    /* Warm Champagne Cream */
     padding: 140px 20px;
     position: relative;
     overflow: hidden;
 }
 
-/* Section Header Magic */
 .section-header {
     text-align: center;
     margin-bottom: 80px;
@@ -759,11 +857,10 @@ footer {
     font-family: 'Great Vibes', cursive;
     font-size: 2.2rem;
     color: #9a8c73;
-    /* Muted Champagne Brown */
     margin-bottom: 20px;
 }
 
-/* Luxury Vellum Cards */
+
 .details-section .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -776,7 +873,6 @@ footer {
     background: #ffffff;
     padding: 80px 40px;
     border: 1px solid rgba(212, 175, 55, 0.15);
-    /* Delicate gold border */
     border-radius: 2px;
     text-align: center;
     position: relative;
@@ -784,14 +880,14 @@ footer {
     box-shadow: 0 15px 45px rgba(0, 0, 0, 0.02);
 }
 
-/* The Magic Hover Effect */
+
 .luxury-card:hover {
     transform: translateY(-15px);
     border-color: var(--gold);
     box-shadow: 0 30px 60px rgba(184, 134, 11, 0.12);
 }
 
-/* Card Ornamentation */
+
 .card-icon {
     font-size: 2.5rem;
     margin-bottom: 25px;
@@ -815,7 +911,7 @@ footer {
     margin: 0 auto 35px;
 }
 
-/* Card Content Typography */
+
 .luxury-card .time {
     font-family: 'Playfair Display', serif;
     font-size: 2.4rem;
@@ -834,12 +930,11 @@ footer {
     text-transform: uppercase;
     line-height: 1.6;
     margin-bottom: 50px;
-    /* Space for the button */
     min-height: 3.2em;
-    /* Keeps buttons aligned if text wraps */
+
 }
 
-/* The "Open Maps" Magic Button */
+
 .btn-maps {
     display: inline-block;
     padding: 16px 45px;
@@ -862,9 +957,106 @@ footer {
     color: #fff;
     box-shadow: 0 10px 25px rgba(212, 175, 55, 0.3);
     letter-spacing: 5px;
-    /* Subtle widening on hover */
 }
 
+/* --- LUXURY VENUE SECTION --- */
+.details-section {
+    background-color: #fdfaf5; /* Clean light background from your screenshot */
+    padding: 120px 0;
+}
+
+/* Grid System: 1 Col on Mobile, 2 Col on Web */
+.venue-grid-system {
+    display: grid;
+    grid-template-columns: 1fr; /* Mobile Default */
+    gap: 40px;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* DESKTOP VIEW: 2 COLUMNS */
+@media (min-width: 850px) {
+    .venue-grid-system {
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+    }
+}
+
+/* PORTRAIT CARD STYLE (Mobile & Web) */
+.venue-portrait-card {
+    background: #fff;
+    padding: 70px 30px;
+    border: 1px solid rgba(212, 175, 55, 0.2); /* Thin gold border */
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.v-icon {
+    font-size: 2.8rem;
+    margin-bottom: 25px;
+}
+
+.v-label {
+    font-family: 'Cinzel', serif;
+    font-size: 1.4rem;
+    color: var(--gold);
+    letter-spacing: 6px;
+    margin-bottom: 15px;
+}
+
+.v-divider {
+    width: 50px;
+    height: 1px;
+    background: var(--gold);
+    margin-bottom: 35px;
+    opacity: 0.4;
+}
+
+.v-time {
+    font-family: 'Playfair Display', serif; /* Or any elegant Serif */
+    font-style: italic;
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 25px;
+    font-weight: 400;
+}
+
+.v-info {
+    margin-bottom: 45px;
+}
+
+.v-name {
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    color: #666;
+    line-height: 1.8;
+}
+
+/* THE BUTTON FROM THE SCREENSHOT */
+.v-btn {
+    display: inline-block;
+    padding: 16px 45px;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 4px;
+    font-weight: 600;
+    transition: all 0.4s ease;
+}
+
+.v-btn:hover {
+    background: var(--gold);
+    color: #fff;
+}
 
 
 
@@ -1133,6 +1325,97 @@ footer {
 }
 
 
+/* --- RSVP MOBILE BEAUTIFICATION --- */
+@media (max-width: 600px) {
+    .rsvp-section {
+        padding: 80px 0 !important; /* Balanced vertical padding */
+    }
+
+    /* 1. Fix the Invitation Box proportions */
+    .rsvp-invitation-box {
+        width: 92% !important;
+        padding: 60px 20px 40px !important; /* Reduced side padding to give form more room */
+        margin: 0 auto;
+        border-radius: 4px;
+    }
+
+    /* 2. Adjust Ornate Corners so they don't touch the text */
+    .gold-corner {
+        width: 20px !important;
+        height: 20px !important;
+    }
+    .gold-corner.tl { top: 12px; left: 12px; }
+    .gold-corner.tr { top: 12px; right: 12px; }
+    .gold-corner.bl { bottom: 12px; left: 12px; }
+    .gold-corner.br { bottom: 12px; right: 12px; }
+
+    /* 3. Scale down Headers for better flow */
+    .rsvp-header-main {
+        font-size: 1.4rem !important;
+        letter-spacing: 5px !important;
+        margin-bottom: 15px !important;
+    }
+
+    .rsvp-script-text {
+        font-size: 1.7rem !important; /* Smaller script size */
+        line-height: 1.3 !important;
+        padding: 0 10px;
+    }
+
+    .rsvp-script-wrap {
+        margin-bottom: 40px !important;
+    }
+
+    /* 4. Tighten Form Rows */
+    .magic-rsvp-form {
+        margin-top: 20px !important;
+    }
+
+    .rsvp-row {
+        margin-bottom: 30px !important; /* Reduced from 45px */
+    }
+
+    .gold-label {
+        font-size: 0.65rem !important;
+        letter-spacing: 3px !important;
+        margin-bottom: 8px !important;
+    }
+
+    .magic-rsvp-form input, 
+    .magic-rsvp-form select, 
+    .magic-rsvp-form textarea {
+        font-size: 0.95rem !important;
+        padding: 8px 0 !important;
+    }
+
+    /* 5. Make the Button full-width and easier to tap */
+    .rsvp-btn-luxury {
+        width: 100% !important;
+        padding: 15px 0 !important;
+        font-size: 0.8rem !important;
+        letter-spacing: 4px !important;
+    }
+
+    .rsvp-deadline-text {
+        margin-top: 40px !important;
+        font-size: 0.7rem !important;
+    }
+
+    /* 6. Ensure enough bottom spacing so Floating Buttons don't cover "Send Response" */
+    .rsvp-inner-content {
+        padding-bottom: 40px; 
+    }
+}
+
+/* Extra small screens fix (iPhone SE) */
+@media (max-width: 380px) {
+    .rsvp-header-main {
+        font-size: 1.2rem !important;
+    }
+    .rsvp-script-text {
+        font-size: 1.5rem !important;
+    }
+}
 
 /* --- COMPACT & READABLE FOOTER --- */
 .compact-footer {
@@ -1789,88 +2072,95 @@ footer {
     }
 }
 
-/* --- MOBILE HERO REFINEMENT: THE DEFINITIVE FIX --- */
+/* --- HERO MOBILE REFINEMENT --- */
 @media (max-width: 600px) {
     .hero-content {
-        padding-top: 30px;
+        padding: 0 10px;
     }
 
-    /* 1. Fix Names and Force Ampersand Visibility */
+    /* 1. Fix Name Scaling & Clipping */
     .couple-names {
         display: flex !important;
         flex-direction: column !important;
         align-items: center !important;
-        justify-content: center !important;
-        font-size: 3.5rem !important;
+        font-size: 3rem !important; /* Scaled down to fit screen width */
         line-height: 1.1 !important;
-        margin: 5px 0 !important;
-        background: none !important;
-        /* Removes shimmer effect from container */
+        margin: 10px 0 !important;
+        background: none !important; 
         -webkit-background-clip: initial !important;
     }
 
-    /* Reset the names so they keep the shimmer individually */
-    .couple-names span.fname {
+    /* Add vertical padding to each name so cursive tails aren't cut */
+    .fname {
         display: block !important;
+        padding: 10px 0 !important; 
         background: var(--gold-gradient);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
-        background-size: 200% auto;
-        animation: shine 4s linear infinite;
+        filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
     }
 
-    /* GLOBAL FIX: Ensure Ampersand is solid gold and visible on Web/Desktop */
-    .couple-names span.amp {
-        display: inline-block;
+    /* Style the ampersand specifically */
+    .amp {
+        display: block !important;
+        font-family: 'Montserrat', sans-serif !important;
+        font-size: 1.2rem !important;
+        margin: -5px 0 !important; /* Pull names slightly closer */
         color: var(--gold) !important;
         -webkit-text-fill-color: var(--gold) !important;
-        /* This overrides the transparency */
-        opacity: 1 !important;
-        background: none !important;
-        margin: 0 15px;
-        font-family: 'Montserrat', sans-serif;
-        font-weight: 300;
+        opacity: 0.8;
     }
 
-    
-    /* 2. Fix Countdown Alignment */
+    /* 2. Fix Taglines */
+    .top-tagline, .sub-tagline {
+        font-size: 0.65rem !important;
+        letter-spacing: 4px !important;
+    }
+
+    /* 3. Fix Countdown Container */
     .glass-wrapper {
-        width: 92%;
-        padding: 15px 5px !important;
-        border-radius: 15px;
-        margin: 15px auto !important;
-        background: rgba(255, 255, 255, 0.1);
+        width: 95% !important;
+        padding: 12px 5px !important;
+        border-radius: 12px !important;
+        margin: 20px auto !important;
+        background: rgba(255, 255, 255, 0.08) !important;
+        backdrop-filter: blur(10px) !important;
     }
 
     .countdown-row {
-        display: flex !important;
         gap: 0 !important;
-        justify-content: space-around !important;
-        align-items: center !important;
+        justify-content: space-evenly !important;
     }
 
     .count-item span {
-        font-size: 1.6rem !important;
-        font-weight: 400 !important;
+        font-size: 1.3rem !important; /* Smaller numbers to stay on one line */
+        font-weight: 500 !important;
     }
 
     .count-item p {
         font-size: 0.5rem !important;
         letter-spacing: 1px !important;
+        opacity: 0.7;
     }
 
     .divider {
-        font-size: 1rem;
-        opacity: 0.3;
-        margin-top: -12px;
+        font-size: 0.9rem !important;
+        opacity: 0.2;
     }
 
-    /* 3. Date & Info */
     .hero-date-location {
-        font-size: 0.75rem !important;
-        margin-top: 5px !important;
+        font-size: 0.7rem !important;
+        letter-spacing: 2px !important;
+        margin-top: 10px !important;
     }
 }
+
+/* Extra tight fix for very small phones (like iPhone SE) */
+@media (max-width: 370px) {
+    .couple-names { font-size: 2.6rem !important; }
+    .count-item span { font-size: 1.1rem !important; }
+}
+
 /* --- THE ULTIMATE MOBILE BOX & LAYOUT FIX --- */
 @media (max-width: 650px) {
 
@@ -2151,159 +2441,6 @@ html, body {
     }
 }
 
-/* --- ENTOURAGE: DARK STRUCTURED CARDS --- */
-/* 
-.entourage-section {
-    position: relative;
-    background-color: #0a0a0a; 
-    padding: 140px 0;
-    overflow: hidden;
-    text-align: center;
-}
-
-
-.royal-glass-card {
-    background: rgba(15, 15, 15, 0.6);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(212, 175, 55, 0.3);
-    border-radius: 200px 200px 20px 20px;
-    padding: 80px 40px 50px;
-    box-shadow: 
-        0 0 30px rgba(0,0,0,0.5),
-        inset 0 0 20px rgba(212, 175, 55, 0.05); 
-    transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-.royal-glass-card:hover {
-    transform: translateY(-10px) scale(1.02);
-    border-color: var(--gold);
-    box-shadow: 0 20px 40px rgba(212, 175, 55, 0.15);
-}
-
-.royal-glass-card::before {
-    content: '';
-    position: absolute;
-    top: -10%;
-    left: 50%;
-    width: 120%;
-    height: 120%;
-    background: radial-gradient(circle, rgba(212, 175, 55, 0.08) 0%, transparent 70%);
-    transform: translateX(-50%);
-    z-index: -1;
-    pointer-events: none;
-}
-
-
-.card-structure-row {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 50px;
-}
-
-.side-col {
-    flex: 1;
-}
-
-.vertical-gold-line {
-    width: 1px;
-    height: 120px;
-    background: linear-gradient(to bottom, transparent, var(--gold), transparent);
-    opacity: 0.4;
-}
-
-.card-triple-structure {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 40px;
-}
-
-
-.card-script-gold {
-    font-family: 'Great Vibes', cursive;
-    font-size: 3.2rem;
-    color: var(--gold);
-    margin-bottom: 35px;
-}
-
-.role-label-gold {
-    display: block;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.75rem;
-    letter-spacing: 4px;
-    color: var(--gold);
-    text-transform: uppercase;
-    margin-bottom: 15px;
-    font-weight: 600;
-    opacity: 0.9;
-}
-
-.name-display-white {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.6rem;
-    color: #fff; 
-    line-height: 1.5;
-    font-weight: 300;
-}
-
-.name-script-white {
-    font-family: 'Great Vibes', cursive;
-    font-size: 2.8rem;
-    color: #fff;
-    text-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
-}
-
-.name-simple-white {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.15rem;
-    color: rgba(255, 255, 255, 0.9);
-    margin-bottom: 8px;
-}
-
-
-.party-label-gold {
-    font-family: 'Cinzel', serif;
-    font-size: 1.1rem;
-    color: var(--gold);
-    letter-spacing: 3px;
-    margin-bottom: 25px;
-    text-transform: uppercase;
-}
-
-.party-list-white {
-    list-style: none;
-    padding: 0;
-}
-
-.party-list-white li {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.1rem;
-    color: rgba(255, 255, 255, 0.85);
-    line-height: 2.4;
-}
-
-
-@media (max-width: 768px) {
-    .royal-glass-card {
-        width: 95%;
-        padding: 50px 20px;
-    }
-
-    .card-structure-row, .card-triple-structure {
-        flex-direction: column;
-        display: flex;
-        gap: 40px;
-    }
-
-    .vertical-gold-line {
-        width: 60%;
-        height: 1px;
-        margin: 0 auto;
-        background: linear-gradient(to right, transparent, var(--gold), transparent);
-    }
-} */
-
 /* --- BALANCED CELESTIAL ENTOURAGE --- */
 
 .entourage-section {
@@ -2550,5 +2687,102 @@ html, body {
     .parents-row {
         flex-direction: column;
         gap: 40px;
+    }
+}
+
+/* --- ENTOURAGE MOBILE REFINEMENT --- */
+@media (max-width: 600px) {
+    /* 1. Fix the Title "ENTOURAGE" cutting off */
+    .e-title {
+        font-size: 2rem !important; /* Smaller base size */
+        letter-spacing: 5px !important; /* Reduced from 15px to fit screen */
+        line-height: 1.2;
+        margin-top: 10px;
+    }
+
+    .e-sup {
+        letter-spacing: 3px !important;
+        font-size: 0.65rem !important;
+    }
+
+    /* 2. Tighten Spacing between groups */
+    .entourage-section {
+        padding: 80px 0 !important; /* Shorter section padding */
+    }
+
+    .e-header {
+        margin-bottom: 50px !important;
+    }
+
+    .e-group {
+        margin-bottom: 50px !important;
+    }
+
+    /* 3. Scale down Name sizes so they don't dominate the screen */
+    .e-name {
+        font-size: 1.5rem !important; /* Parents names */
+        margin-bottom: 5px;
+    }
+
+    .e-name-lg {
+        font-size: 2.8rem !important; /* Best Man / MOH Script */
+        line-height: 1.1;
+    }
+
+    .e-role {
+        margin-bottom: 15px !important;
+        font-size: 0.6rem !important;
+    }
+
+    .e-script-label {
+        font-size: 2.2rem !important; /* "Primary Sponsors" script */
+    }
+
+    /* 4. Fix Primary Sponsors list (Primary Sponsors) */
+    .e-dual-column {
+        gap: 20px !important; /* Close the gap between the two lists */
+    }
+
+    .e-name-sm {
+        font-size: 0.95rem !important;
+        line-height: 1.6 !important;
+    }
+
+    /* 5. Fix Secondary Sponsors (Candle, Cord, Veil) */
+    .e-triple-column {
+        gap: 35px !important;
+    }
+
+    .e-role-italic {
+        font-size: 1.8rem !important;
+    }
+
+    /* 6. Fix Wedding Party Lists */
+    .e-grid-container {
+        padding-top: 40px !important;
+        margin-bottom: 60px !important;
+        gap: 50px !important;
+    }
+
+    .e-list-plain li {
+        font-size: 1rem !important;
+        line-height: 1.8 !important;
+    }
+
+    /* 7. Adjust Divider Diamond */
+    .e-diamond-divider {
+        padding: 20px 0 !important;
+    }
+}
+
+/* Extra small fix for iPhone SE (extremely narrow screens) */
+@media (max-width: 380px) {
+    .e-title {
+        font-size: 1.7rem !important;
+        letter-spacing: 3px !important;
+    }
+    
+    .e-name-lg {
+        font-size: 2.4rem !important;
     }
 }
