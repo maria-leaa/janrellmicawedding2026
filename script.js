@@ -201,347 +201,50 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
+// --- FAQ ACCORDION LOGIC ---
+    const faqItems = document.querySelectorAll('.faq-item');
 
+    faqItems.forEach(item => {
+        const header = item.querySelector('.faq-header');
+        header.addEventListener('click', () => {
+            // Check if this item is already open
+            const isOpen = item.classList.contains('active');
 
-// // 1. Particle Magic (Vibrant Gold Sparkles)
-// const canvas = document.getElementById('canvas');
-// const ctx = canvas.getContext('2d');
+            // Close all other items (Optional: remove this if you want multiple open at once)
+            faqItems.forEach(otherItem => otherItem.classList.remove('active'));
 
-// let particles = [];
-// const particleCount = 80; // Slightly reduced for cleaner look
-
-// function resize() {
-//     canvas.width = window.innerWidth;
-//     canvas.height = window.innerHeight;
-// }
-
-// window.addEventListener('resize', resize);
-// resize();
-
-// class Particle {
-//     constructor() {
-//         this.reset();
-//     }
-
-//     reset() {
-//         this.x = Math.random() * canvas.width;
-//         this.y = Math.random() * canvas.height + canvas.height; 
-//         this.size = Math.random() * 4 + 1.5; // Slightly larger
-//         this.speedY = Math.random() * 0.8 + 0.3;
-//         this.opacity = Math.random() * 0.6 + 0.3; // Increased base opacity
-//         this.twinkle = Math.random() * 0.015;
-//     }
-
-//     update() {
-//         this.y -= this.speedY;
-        
-//         // Twinkle effect
-//         this.opacity += this.twinkle;
-//         if (this.opacity > 0.9 || this.opacity < 0.2) this.twinkle *= -1;
-
-//         if (this.y < -50) {
-//             this.reset();
-//             this.y = canvas.height + 50;
-//         }
-//     }
-
-//     draw() {
-//         ctx.beginPath();
-//         // Vibrant Gold Color
-//         ctx.fillStyle = `rgba(255, 215, 0, ${this.opacity})`; 
-//         ctx.arc(this.x, this.y, this.size / 2, 0, Math.PI * 2);
-        
-//         // Add a slight glow/bloom to particles
-//         ctx.shadowBlur = 8;
-//         ctx.shadowColor = "rgba(255, 223, 0, 0.8)";
-        
-//         ctx.fill();
-//         ctx.shadowBlur = 0; // Reset for next particle performance
-//     }
-// }
-
-// function initMagic() {
-//     particles = [];
-//     for (let i = 0; i < particleCount; i++) {
-//         particles.push(new Particle());
-//     }
-// }
-
-// function animate() {
-//     ctx.clearRect(0, 0, canvas.width, canvas.height);
-//     particles.forEach(p => {
-//         p.update();
-//         p.draw();
-//     });
-//     requestAnimationFrame(animate);
-// }
-
-// initMagic();
-// animate();
-
-// // 2. Countdown Timer
-// const weddingDate = new Date("September 6, 2026 14:00:00").getTime();
-
-// setInterval(() => {
-//     const now = new Date().getTime();
-//     const diff = weddingDate - now;
-
-//     const d = Math.floor(diff / (1000 * 60 * 60 * 24));
-//     const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-//     const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-//     const s = Math.floor((diff % (1000 * 60)) / 1000);
-
-//     document.getElementById("days").innerText = d.toString().padStart(2, '0');
-//     document.getElementById("hours").innerText = h.toString().padStart(2, '0');
-//     document.getElementById("mins").innerText = m.toString().padStart(2, '0');
-//     document.getElementById("secs").innerText = s.toString().padStart(2, '0');
-// }, 1000);
-
-// // 3. Parallax Scroll Effect
-// window.addEventListener('scroll', () => {
-//     const scrolled = window.pageYOffset;
-//     const heroContent = document.querySelector('.hero-content');
-//     if (heroContent) {
-//         heroContent.style.transform = `translateY(${scrolled * 0.25}px)`;
-//         heroContent.style.opacity = 1 - (scrolled / 1000);
-//     }
-// });
-
-// // 4. Smooth Reveal Animation
-// const observer = new IntersectionObserver((entries) => {
-//     entries.forEach(entry => {
-//         if (entry.isIntersecting) {
-//             entry.target.classList.add('appear');
-//         }
-//     });
-// }, { threshold: 0.1 });
-
-// document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-
-
-// // --- MOBILE NAVBAR LOGIC ---
-// const hamburger = document.getElementById('hamburger');
-// const navMenu = document.getElementById('nav-menu');
-// const navLinks = document.querySelectorAll('.nav-links a');
-
-// // Toggle Menu
-// hamburger.addEventListener('click', () => {
-//     hamburger.classList.toggle('active');
-//     navMenu.classList.toggle('active');
-// });
-
-// // Close menu when a link is clicked (important for single page)
-// navLinks.forEach(link => {
-//     link.addEventListener('click', () => {
-//         hamburger.classList.remove('active');
-//         navMenu.classList.remove('active');
-//     });
-// });
-
-// // Change Navbar background on scroll
-// window.addEventListener('scroll', () => {
-//     const navbar = document.querySelector('.navbar');
-//     if (window.scrollY > 50) {
-//         navbar.style.padding = "15px 60px";
-//         navbar.style.background = "rgba(0, 0, 0, 0.8)"; // Darker on scroll
-//     } else {
-//         navbar.style.padding = "20px 60px";
-//         navbar.style.background = "rgba(0, 0, 0, 0.2)";
-//     }
-// });
-
-
-// // --- GALLERY TOGGLE LOGIC ---
-// const galleryBtn = document.getElementById('gallery-toggle');
-// const extraItems = document.querySelectorAll('.gallery-item.extra');
-
-// galleryBtn.addEventListener('click', function() {
-//     const isShowingMore = galleryBtn.innerText === 'Show More';
-    
-//     extraItems.forEach(item => {
-//         if (isShowingMore) {
-//             item.classList.add('visible');
-//             // If the item has a mosaic class (tall, wide, big), 
-//             // ensure it displays correctly in the grid
-//             if (item.classList.contains('tall') || item.classList.contains('big') || item.classList.contains('wide')) {
-//                 item.style.display = 'block'; 
-//             }
-//         } else {
-//             item.classList.remove('visible');
-//             item.style.display = 'none';
-//         }
-//     });
-
-//     if (isShowingMore) {
-//         galleryBtn.innerText = 'Show Less';
-//     } else {
-//         galleryBtn.innerText = 'Show More';
-//         // Optional: Scroll back to gallery header when hiding
-//         document.getElementById('gallery').scrollIntoView({ behavior: 'smooth' });
-//     }
-// });
-
-// // Keep your openLightbox function from before...
-// function openLightbox(element) {
-//     const src = element.querySelector('img').src;
-//     document.getElementById('lightbox-img').src = src;
-//     document.getElementById('lightbox').style.display = 'flex';
-// }
+            // Toggle current item
+            if (!isOpen) {
+                item.classList.add('active');
+            }
+        });
+    });
 
 
 
-// document.addEventListener('DOMContentLoaded', function() {
-//     const galleryToggle = document.getElementById('gallery-toggle');
-//     const extraImages = document.querySelectorAll('.gallery-item.extra');
+document.addEventListener('mousemove', (e) => {
+    const orb = document.querySelector('.glow-orb');
+    if (orb) {
+        const x = e.clientX;
+        const y = e.clientY;
+        // Moves the orb slowly toward the mouse for a "dreamy" look
+        orb.style.transform = `translate(calc(-50% + ${x/50}px), calc(-50% + ${y/50}px))`;
+    }
+});
 
-//     if (galleryToggle) {
-//         galleryToggle.addEventListener('click', function() {
-//             const currentState = galleryToggle.getAttribute('data-state');
+// Staggered Fade-in for names
+const eObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = "1";
+            entry.target.style.transform = "translateY(0)";
+        }
+    });
+}, { threshold: 0.1 });
 
-//             if (currentState === 'hidden') {
-//                 // 1. First make them part of the layout
-//                 extraImages.forEach(img => {
-//                     img.style.display = 'block';
-//                 });
-
-//                 // 2. Use a tiny timeout to trigger the CSS transition
-//                 setTimeout(() => {
-//                     extraImages.forEach(img => {
-//                         img.classList.add('is-animated');
-//                     });
-//                 }, 10); 
-
-//                 galleryToggle.textContent = 'Show Less';
-//                 galleryToggle.setAttribute('data-state', 'visible');
-
-//             } else {
-//                 // 1. Start the fade-out animation
-//                 extraImages.forEach(img => {
-//                     img.classList.remove('is-animated');
-//                 });
-
-//                 // 2. Wait for the animation (600ms) to finish before removing from layout
-//                 setTimeout(() => {
-//                     extraImages.forEach(img => {
-//                         img.style.display = 'none';
-//                     });
-//                 }, 600);
-
-//                 galleryToggle.textContent = 'Show More Images';
-//                 galleryToggle.setAttribute('data-state', 'hidden');
-                
-//                 // 3. Smooth scroll back up
-//                 const gallerySection = document.getElementById('gallery');
-//                 window.scrollTo({
-//                     top: gallerySection.offsetTop - 50,
-//                     behavior: 'smooth'
-//                 });
-//             }
-//         });
-//     }
-// });
-
-
-// // --- RSVP FORM SUBMISSION LOGIC ---
-// document.addEventListener('DOMContentLoaded', function() {
-//     const rsvpForm = document.getElementById('weddingRSVP');
-//     const rsvpSuccess = document.getElementById('rsvpSuccess');
-//     const rsvpHeader = document.querySelector('.rsvp-section .foil-title');
-//     const rsvpIntro = document.querySelector('.rsvp-intro-light');
-
-//     if (rsvpForm) {
-//         rsvpForm.addEventListener('submit', function(e) {
-//             e.preventDefault(); // Prevents the page from refreshing
-
-//             // 1. Add a visual "submitting" state
-//             rsvpForm.classList.add('submitting');
-
-//             // 2. Wait a split second to simulate sending, then swap content
-//             setTimeout(() => {
-//                 // Hide the original form and headers
-//                 rsvpForm.style.display = 'none';
-//                 if(rsvpHeader) rsvpHeader.style.display = 'none';
-//                 if(rsvpIntro) rsvpIntro.style.display = 'none';
-
-//                 // Show the success message
-//                 rsvpSuccess.style.display = 'block';
-
-//                 // Optional: Scroll to the top of the RSVP section to show the message
-//                 document.getElementById('rsvp').scrollIntoView({ behavior: 'smooth' });
-//             }, 600);
-//         });
-//     }
-// });
-
-// // --- INVITATION OVERLAY & MUSIC LOGIC ---
-// document.addEventListener('DOMContentLoaded', function() {
-//     const overlay = document.getElementById('invitation-overlay');
-//     const openBtn = document.getElementById('open-invitation-btn');
-//     const music = document.getElementById('wedding-music');
-//     const musicBtn = document.querySelector('.floating-music');
-
-//     // Start by blocking scroll
-//     document.body.classList.add('no-scroll');
-
-//     if (openBtn) {
-//         openBtn.addEventListener('click', function() {
-//             // 1. Play Music
-//             music.play().catch(error => console.log("Playback blocked by browser"));
-
-//             // 2. Hide Overlay
-//             overlay.classList.add('hidden');
-
-//             // 3. Enable Scrolling
-//             document.body.classList.remove('no-scroll');
-
-//             // 4. Cleanup: Remove from DOM after transition
-//             setTimeout(() => {
-//                 overlay.style.display = 'none';
-//             }, 1500);
-//         });
-//     }
-
-//     // Update Floating Music Button Logic
-//     if (musicBtn) {
-//         musicBtn.addEventListener('click', () => {
-//             if (music.paused) {
-//                 music.play();
-//                 musicBtn.innerText = '♫';
-//                 musicBtn.style.animation = 'pulse 2s infinite';
-//             } else {
-//                 music.pause();
-//                 musicBtn.innerText = '🔇';
-//                 musicBtn.style.animation = 'none';
-//             }
-//         });
-//     }
-// });
-
-// // Add a pulse animation for the music button when playing
-// const style = document.createElement('style');
-// style.innerHTML = `
-// @keyframes pulse {
-//     0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.4); }
-//     70% { transform: scale(1.1); box-shadow: 0 0 0 10px rgba(212, 175, 55, 0); }
-//     100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); }
-// }`;
-// document.head.appendChild(style);
-
-// // --- BACK TO TOP LOGIC ---
-// const backToTopBtn = document.getElementById('backToTop');
-
-// window.addEventListener('scroll', () => {
-//     // Show button after scrolling 500px (roughly past the hero section)
-//     if (window.scrollY > 500) {
-//         backToTopBtn.classList.add('show');
-//     } else {
-//         backToTopBtn.classList.remove('show');
-//     }
-// });
-
-// backToTopBtn.addEventListener('click', () => {
-//     window.scrollTo({
-//         top: 0,
-//         behavior: 'smooth'
-//     });
-// });
+document.querySelectorAll('.fade-in').forEach(el => {
+    el.style.opacity = "0";
+    el.style.transform = "translateY(30px)";
+    el.style.transition = "all 1.2s ease-out";
+    eObserver.observe(el);
+});

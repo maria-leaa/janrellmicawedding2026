@@ -867,570 +867,16 @@ footer {
 
 
 
-/* --- LUXURY SQUARE ENTOURAGE --- */
-.entourage-section {
-    background-color: #0a0a0a;
-    /* Dark cinematic background */
-    color: #fff;
-    padding: 140px 0;
-    position: relative;
-    overflow: hidden;
-}
 
-/* Cinematic Shine */
-.light-beam {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    width: 200%;
-    height: 100%;
-    background: radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, transparent 80%);
-    transform: translateX(-50%);
-    z-index: 1;
-}
-
-.entourage-header {
-    text-align: center;
-    margin-bottom: 80px;
-    position: relative;
-    z-index: 2;
-}
-
-.foil-title {
-    font-family: 'Cinzel', serif;
-    font-size: clamp(2.5rem, 8vw, 4rem);
-    background: linear-gradient(45deg, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    letter-spacing: 15px;
-    text-transform: uppercase;
-    font-weight: 700;
-}
-
-.header-divider {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-    margin: 15px 0;
-}
-
-.header-divider .line {
-    width: 60px;
-    height: 1px;
-    background: var(--gold);
-    opacity: 0.5;
-}
-
-.header-divider .diamond {
-    color: var(--gold);
-    font-size: 0.8rem;
-}
-
-.script-subtitle {
-    font-family: 'Great Vibes', cursive;
-    font-size: 2rem;
-    color: var(--champagne);
-}
-
-/* Pillar Square Frames */
-.pillars-row {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    margin-bottom: 80px;
-}
-
-/* Fix for Pillar Frames width */
-.pillar-frame {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(212, 175, 55, 0.3);
-    padding: 40px 20px;
-    position: relative;
-    text-align: center;
-    width: 100%;
-    /* Flexible width */
-    max-width: 400px;
-    /* Caps width on desktop */
-}
-
-/* Corner Accents */
-.corner {
-    position: absolute;
-    width: 15px;
-    height: 15px;
-    border: 2px solid var(--gold);
-}
-
-.tl {
-    top: -2px;
-    left: -2px;
-    border-right: none;
-    border-bottom: none;
-}
-
-.tr {
-    top: -2px;
-    right: -2px;
-    border-left: none;
-    border-bottom: none;
-}
-
-.bl {
-    bottom: -2px;
-    left: -2px;
-    border-right: none;
-    border-top: none;
-}
-
-.br {
-    bottom: -2px;
-    right: -2px;
-    border-left: none;
-    border-top: none;
-}
-
-.role-tag {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.65rem;
-    text-transform: uppercase;
-    letter-spacing: 4px;
-    color: var(--gold);
-    display: block;
-    margin-bottom: 15px;
-}
-
-.pillar-name {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.7rem;
-    font-weight: 300;
-    line-height: 1.5;
-    color: white;
-}
-
-/* Witness Frame */
-.witness-frame {
-    max-width: 950px;
-    margin: 0 auto 60px;
-    border: 1px solid rgba(212, 175, 55, 0.2);
-    padding: 50px 40px;
-    text-align: center;
-    background: rgba(255, 255, 255, 0.02);
-    position: relative;
-}
-
-.gold-divider-mini {
-    width: 50px;
-    height: 1px;
-    background: var(--gold-gradient);
-    margin: 0 auto 30px;
-}
-
-.witness-names-container {
-    display: flex;
-    flex-wrap: wrap;
-    /* Allows names to wrap instead of going off-screen */
-    justify-content: center;
-    align-items: center;
-    max-width: 90%;
-    margin: 0 auto;
-}
-
-/* .witness-names-container span {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.1rem;
-    font-weight: 300;
-    color: var(--champagne);
-    letter-spacing: 1px;
-    display: flex;
-    align-items: center;
-    white-space: nowrap;
-    padding: 10px 0;
-
-} */
-
-.witness-names-container span {
-    white-space: normal;
-    /* Fixes text cutting off */
-    text-align: center;
-}
-
-/* The Magic Separator */
-.witness-names-container span:not(:last-child)::after {
-    content: '◆';
-    margin: 0 25px;
-    color: var(--gold);
-    font-size: 0.6rem;
-    opacity: 0.7;
-}
-
-.frame-label {
-    font-family: 'Cinzel', serif;
-    color: var(--gold);
-    letter-spacing: 4px;
-    font-size: 0.8rem;
-    margin-bottom: 25px;
-}
-
-.witness-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px 30px;
-    font-size: 1.1rem;
-    color: var(--champagne);
-}
-
-/* Square Card Grid */
-.square-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
-    max-width: 900px;
-    margin: 0 auto;
-}
-
-.info-card {
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(212, 175, 55, 0.2);
-    padding: 50px 30px;
-    text-align: center;
-}
-
-.card-title {
-    font-family: 'Cinzel', serif;
-    font-size: 0.9rem;
-    letter-spacing: 3px;
-    color: var(--gold);
-    margin-bottom: 20px;
-}
-
-.card-line {
-    width: 40px;
-    height: 1px;
-    background: var(--gold);
-    margin: 0 auto 30px;
-}
-
-.member small {
-    display: block;
-    font-size: 0.6rem;
-    letter-spacing: 2px;
-    color: #888;
-    text-transform: uppercase;
-    margin-bottom: 5px;
-}
-
-.member p {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.4rem;
-    color: white;
-    margin-bottom: 25px;
-}
-
-/* Bearer List Fix */
-/* .bearer-rows {
-    text-align: left;
-}
-
-.b-item {
-    display: grid;
-    grid-template-columns: 80px 1fr;
-    gap: 10px;
-    margin-bottom: 15px;
-    font-size: 0.85rem;
-}
-
-.b-item strong {
-    color: var(--gold);
-    font-size: 0.6rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.b-item p {
-    color: rgba(255, 255, 255, 0.7);
-    line-height: 1.4;
-} */
-
-/* Flower Girl Strip */
-.flower-strip {
-    max-width: 900px;
-    margin: 30px auto;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 30px;
-    text-align: center;
-    background: rgba(255, 255, 255, 0.02);
-}
-
-/* --- REFINED BEARER LAYOUT --- */
-.bearer-list-new {
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-    /* Space between rows */
-    padding: 0 10px;
-}
-
-.bearer-group {
-    text-align: center;
-}
-
-.b-label {
-    display: block;
-    font-family: 'Cinzel', serif;
-    font-size: 0.65rem;
-    letter-spacing: 3px;
-    color: var(--gold);
-    text-transform: uppercase;
-    margin-bottom: 8px;
-    opacity: 0.8;
-}
-
-/* For the long Candle list */
-.b-names-long {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.85rem;
-    font-weight: 300;
-    line-height: 1.8;
-    color: rgba(255, 255, 255, 0.9);
-    max-width: 90%;
-    margin: 0 auto;
-}
-
-.b-names-long span {
-    color: var(--gold);
-    font-size: 0.6rem;
-    margin: 0 8px;
-    vertical-align: middle;
-}
-
-/* For single or double names */
-.b-names {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.1rem;
-    color: #fff;
-    line-height: 1.4;
-}
-
-/* Split rows for the smaller groups */
-.bearer-row-split {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    border-top: 1px solid rgba(212, 175, 55, 0.1);
-    padding-top: 20px;
-}
-
-/* Responsive adjustment for phones */
-@media (max-width: 600px) {
-    .bearer-row-split {
-        grid-template-columns: 1fr;
-        /* Stack on mobile */
-        gap: 25px;
-    }
-
-    .b-names-long {
-        font-size: 0.75rem;
-    }
-}
-
-/* Grand Party Frame (Side by Side Squares) */
-.grand-party-frame {
-    display: grid;
-    grid-template-columns: 1fr 1px 1fr;
-    max-width: 900px;
-    margin: 60px auto 0;
-    border: 1px solid rgba(212, 175, 55, 0.3);
-    padding: 60px 40px;
-    background: rgba(255, 255, 255, 0.03);
-}
-
-.party-side {
-    text-align: center;
-}
-
-.party-header {
-    font-family: 'Cinzel', serif;
-    color: var(--gold);
-    letter-spacing: 4px;
-    margin-bottom: 25px;
-}
-
-.party-list {
-    list-style: none;
-    line-height: 2.2;
-    font-size: 0.95rem;
-    font-weight: 300;
-}
-
-.vertical-gold-line {
-    background: var(--gold);
-    opacity: 0.3;
-}
-
-
-
-/* Responsive: On small screens, stack them slightly differently */
-@media (max-width: 600px) {
-    .witness-names-container {
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    .witness-names-container span:not(:last-child)::after {
-        display: none;
-        /* Remove horizontal diamonds on mobile stack */
-    }
-
-    .witness-names-container span {
-        border-bottom: 1px solid rgba(212, 175, 55, 0.1);
-        padding-bottom: 10px;
-        width: 100%;
-        justify-content: center;
-    }
-}
-
-@media (max-width: 650px) {
-    .witness-frame {
-        padding: 40px 20px;
-    }
-
-    .witness-names-container {
-        flex-direction: column;
-        /* Stack vertically */
-    }
-
-    /* Remove the Diamond separator on mobile */
-    .witness-names-container span:not(:last-child)::after {
-        display: none;
-    }
-
-    /* Ensure NO underline/border-bottom */
-    .witness-names-container span {
-        border-bottom: none !important;
-        width: auto;
-        padding: 8px 0;
-        /* Control spacing between names manually */
-    }
-}
-
-/* --- LUXURY CARD ENHANCEMENTS --- */
-.luxury-border {
-    position: relative;
-    border: 1px solid rgba(212, 175, 55, 0.3) !important;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%) !important;
-    overflow: hidden;
-}
-
-.card-ornament {
-    position: absolute;
-    width: 100%;
-    text-align: center;
-    color: var(--gold);
-    font-size: 1.2rem;
-    opacity: 0.6;
-}
-
-.card-ornament.top {
-    top: 15px;
-}
-
-.card-ornament.bottom {
-    bottom: 15px;
-}
-
-.name-highlight {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.8rem !important;
-    background: var(--gold-gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    margin-bottom: 5px !important;
-}
-
-.ornamental-divider {
-    color: var(--gold);
-    font-family: 'Great Vibes', cursive;
-    font-size: 1.5rem;
-    margin: 10px 0;
-    opacity: 0.5;
-}
-
-/* --- BEARER LIST STYLING --- */
-/* .bearer-list {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    text-align: center;
-}
-
-.b-label {
-    display: block;
-    font-family: 'Cinzel', serif;
-    font-size: 0.7rem;
-    letter-spacing: 3px;
-    color: var(--gold);
-    text-transform: uppercase;
-    margin-bottom: 5px;
-}
-
-.b-names {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.9rem;
-    color: var(--champagne);
-    font-weight: 300;
-    line-height: 1.6;
-    max-width: 90%;
-    margin: 0 auto;
-} */
-
-/* --- FLOWER GIRLS SECTION --- */
-.flower-strip-container {
-    max-width: 900px;
-    margin: 40px auto;
-    padding: 2px;
-    background: var(--gold-gradient);
-    /* Creates a thin gold frame effect */
-}
-
-/* .flower-strip {
-    background: #0a0a0a;
-    padding: 40px;
-    text-align: center;
-} */
-
-.flower-names {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    flex-wrap: wrap;
-    font-size: 1.2rem;
-    color: white;
-    font-family: 'Playfair Display', serif;
-}
-
-.dot {
-    width: 5px;
-    height: 5px;
-    background: var(--gold);
-    border-radius: 50%;
-    opacity: 0.6;
-}
-
-
-/* --- CINEMATIC DARK RSVP SECTION --- */
+/* --- CINEMATIC DARK RSVP SECTION ---
 .rsvp-section {
     position: relative;
     background-color: #0a0a0a;
-    /* Matches your Royal Entourage background */
     padding: 160px 0;
     overflow: hidden;
     text-align: center;
 }
 
-/* Gold Light Beam effect matching Entourage */
 .rsvp-royal-beam {
     position: absolute;
     top: 0;
@@ -1443,12 +889,11 @@ footer {
     pointer-events: none;
 }
 
-/* The Dark Frosted Invitation Card */
+
 .rsvp-invitation-frame.dark-glass {
     max-width: 750px;
     margin: 0 auto;
     background: rgba(255, 255, 255, 0.03);
-    /* Subtle glass */
     backdrop-filter: blur(25px);
     -webkit-backdrop-filter: blur(25px);
     border: 1px solid rgba(212, 175, 55, 0.25);
@@ -1462,7 +907,6 @@ footer {
     font-family: 'Great Vibes', cursive;
     font-size: 2.2rem;
     color: var(--champagne);
-    /* Light champagne text */
     margin-bottom: 25px;
     opacity: 0.9;
 }
@@ -1473,16 +917,14 @@ footer {
     margin-bottom: 50px;
 }
 
-/* Centering the button wrapper */
 .rsvp-action-centered {
     display: flex;
     justify-content: center;
-    /* PERFECT CENTERING */
+
     width: 100%;
     margin-top: 50px;
 }
 
-/* Royal Glowing Button */
 .rsvp-royal-button {
     position: relative;
     padding: 20px 60px;
@@ -1501,12 +943,11 @@ footer {
 .rsvp-royal-button:hover {
     background: var(--gold-gradient);
     color: #000;
-    /* Contrast text on gold hover */
     box-shadow: 0 0 30px rgba(212, 175, 55, 0.4);
     transform: translateY(-3px);
 }
 
-/* Input Styles for Dark Theme */
+
 .input-container label {
     color: var(--gold);
     font-family: 'Cinzel', serif;
@@ -1522,14 +963,13 @@ footer {
     background: transparent;
     border: none;
     color: #fff;
-    /* White text for readability */
     font-family: 'Montserrat', sans-serif;
     font-size: 1rem;
     width: 100%;
     padding: 10px 0;
 }
 
-/* Underline Effect */
+
 .input-line-gold {
     height: 1px;
     background: rgba(212, 175, 55, 0.3);
@@ -1553,16 +993,143 @@ footer {
     letter-spacing: 2px;
 }
 
-/* Placeholder color fix */
+
 ::placeholder {
     color: rgba(255, 255, 255, 0.3) !important;
 }
 
-/* Desktop Split Fix */
+
 .rsvp-row.split {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 40px;
+} */
+
+/* --- ENHANCED BOXED RSVP (DISTINCT FROM FOOTER) --- */
+
+.rsvp-section {
+    /* A deep, rich charcoal brown that is distinct from the pure black footer */
+    background-color: #161512; 
+    padding: 160px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+/* The Invitation Box / Card */
+.rsvp-invitation-box {
+    max-width: 800px;
+    margin: 0 auto;
+    /* Darker than the section bg to create depth */
+    background: rgba(10, 10, 10, 0.7); 
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    padding: 100px 60px;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 40px 120px rgba(0, 0, 0, 0.6);
+}
+
+/* Ornate Corners */
+.gold-corner {
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    border: 1px solid var(--gold);
+    pointer-events: none;
+}
+.gold-corner.tl { top: 25px; left: 25px; border-right: none; border-bottom: none; }
+.gold-corner.tr { top: 25px; right: 25px; border-left: none; border-bottom: none; }
+.gold-corner.bl { bottom: 25px; left: 25px; border-right: none; border-top: none; }
+.gold-corner.br { bottom: 25px; right: 25px; border-left: none; border-top: none; }
+
+/* Typography matching reference image */
+.rsvp-header-main {
+    font-family: 'Cinzel', serif;
+    font-size: 2.2rem;
+    color: var(--gold);
+    letter-spacing: 8px;
+    margin-bottom: 5px;
+}
+
+.rsvp-script-text {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2.6rem;
+    color: #f4e4bc; /* Warm Champagne */
+    margin: 0;
+    line-height: 1.2;
+}
+
+/* Centered Labels and Form */
+.magic-rsvp-form { max-width: 550px; margin: 40px auto 0; }
+.rsvp-row { margin-bottom: 45px; text-align: center; }
+
+.gold-label {
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 4px;
+    color: var(--gold);
+    margin-bottom: 12px;
+    text-transform: uppercase;
+}
+
+.magic-rsvp-form input, 
+.magic-rsvp-form select, 
+.magic-rsvp-form textarea {
+    background: transparent !important;
+    border: none !important;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.25) !important;
+    color: #fff;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    padding: 10px 0;
+    width: 100%;
+    border-radius: 0;
+    font-size: 1.05rem;
+    transition: 0.4s ease;
+}
+
+.magic-rsvp-form input:focus {
+    outline: none;
+    border-bottom: 1px solid var(--gold) !important;
+    background: rgba(212, 175, 55, 0.05) !important;
+}
+
+/* Button Styling */
+.rsvp-btn-luxury {
+    background: transparent;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    font-family: 'Cinzel', serif;
+    font-size: 0.9rem;
+    padding: 20px 65px;
+    letter-spacing: 5px;
+    cursor: pointer;
+    transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.rsvp-btn-luxury:hover {
+    background: var(--gold);
+    color: #161512;
+    box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+}
+
+.rsvp-deadline-text {
+    margin-top: 60px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.4);
+    letter-spacing: 2px;
+}
+
+/* Mobile Fix */
+@media (max-width: 768px) {
+    .rsvp-invitation-box {
+        width: 95%;
+        padding: 60px 20px;
+    }
+    .rsvp-script-text { font-size: 1.8rem; }
 }
 
 
@@ -2094,9 +1661,10 @@ footer {
     }
 
     .foil-title {
-        font-size: 1.8rem !important;
+        font-size: 2rem !important;
         /* Section titles like "The Royal Court" */
         letter-spacing: 5px !important;
+        
     }
 
     .section-title {
@@ -2388,83 +1956,599 @@ html, body {
     width: 100% !important;
 }
 
-/* --- MOBILE UI REFINEMENT (The Final Polish) --- */
-@media (max-width: 600px) {
-    
-    /* 1. Fix the Overlay (Landing Page) Tagline */
-    .invite-taglineline {
-        letter-spacing: 2px !important; /* Reduced from 4px so it fits */
-        font-size: 0.65rem !important;
-        white-space: nowrap !important; /* FORCES "OF" TO STAY ON THE SAME LINE */
-        margin-bottom: 15px !important;
-        display: block;
-        width: 100%;
+
+/* --- GENTLE REMINDERS SECTION REFINEMENT --- */
+.reminders-section {
+    background-color: #fdfaf5; 
+    padding: 120px 0;
+    position: relative;
+}
+
+/* Header Styling */
+.reminders-header {
+    text-align: center;
+    margin-bottom: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.reminders-title-main {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.8rem, 5vw, 3rem);
+    color: var(--gold);
+    letter-spacing: 12px;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.reminders-title-sub {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2.8rem;
+    color: #9a8c73;
+    margin-top: -25px; /* This creates the overlapping effect from the image */
+    margin-bottom: 10px;
+}
+
+/* Layout Grid */
+.reminders-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Specific Card Styling to match image */
+.reminder-card {
+    background: #ffffff;
+    flex: 1;
+    padding: 60px 40px;
+    border-radius: 4px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.04);
+    text-align: center;
+    border: 1px solid rgba(212, 175, 55, 0.1);
+}
+
+.reminder-card .card-icon {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.reminder-card .card-label {
+    font-family: 'Cinzel', serif;
+    font-size: 1.2rem;
+    color: var(--gold);
+    letter-spacing: 4px;
+    margin-bottom: 15px;
+}
+
+.reminder-card .reminder-text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.reminder-card .gold-highlight {
+    color: #b38728;
+    font-weight: 700;
+}
+
+.reminder-card .ornamental-divider {
+    font-size: 1.5rem;
+    color: #ddd;
+    margin: 20px 0;
+}
+
+.reminder-card .reminder-note {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 0.85rem;
+    color: #777;
+    line-height: 1.6;
+}
+
+/* Mobile Fix */
+@media (max-width: 768px) {
+    .reminders-grid {
+        flex-direction: column;
+        align-items: center;
     }
 
-    .invite-names-main {
-        font-size: 3.2rem !important;
-        line-height: 1.2 !important;
-        margin-bottom: 10px !important;
-    }
-
-    /* 2. Fix the Hero Section Taglines */
-    .top-tagline, .sub-tagline {
-        letter-spacing: 2px !important; /* Reduced from 0.6em */
-        font-size: 0.7rem !important;
-        white-space: nowrap !important; /* FORCES "OF" TO STAY ON THE SAME LINE */
-        opacity: 0.9;
-    }
-
-    /* 3. Fix the "Broken" font overlap for names */
-    .couple-names {
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        font-size: 3.8rem !important;
-        line-height: 1.2 !important; /* Increased for breathing room */
-        margin: 15px 0 !important;
-        background: none !important;
-    }
-
-    .couple-names span.fname {
-        display: block;
-        padding: 5px 0;
-    }
-
-    .couple-names span.amp {
-        font-size: 1.5rem !important;
-        margin: 5px 0 !important;
-        color: var(--gold) !important;
-        -webkit-text-fill-color: var(--gold) !important;
-        opacity: 1 !important;
-    }
-
-    /* 4. Fix Countdown Box and alignment */
-    .glass-wrapper {
-        width: 95% !important;
-        padding: 20px 5px !important;
-        margin: 25px auto !important;
-        border-radius: 15px !important;
-    }
-
-    .countdown-row {
-        gap: 0 !important;
-        justify-content: space-evenly !important;
-    }
-
-    .count-item span {
-        font-size: 1.6rem !important;
-    }
-
-    .divider {
-        font-size: 1rem !important;
-        opacity: 0.3;
-        margin-top: -10px;
-    }
-
-    /* 5. Fix the Ceremony/Reception Box Sizing */
-    .luxury-card {
+    .reminder-card {
+        width: 100% !important;
         padding: 40px 20px !important;
-        width: 92% !important;
+    }
+
+    .reminders-title-main {
+        letter-spacing: 5px;
+    }
+    
+    .reminders-title-sub {
+        font-size: 2.2rem;
+        margin-top: -15px;
+    }
+}
+
+/* --- ROYAL ACCORDION Q&A STYLES --- */
+.faq-section {
+    background-color: #ffffff;
+    padding: 100px 0;
+}
+
+.faq-accordion {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.faq-item {
+    border-bottom: 1px solid #f0e6d2; /* Elegant line like the image */
+}
+
+.faq-header {
+    width: 100%;
+    padding: 30px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    text-align: left;
+    transition: 0.3s;
+}
+
+.faq-question {
+    font-family: 'Playfair Display', serif; /* Elegant serif like image */
+    font-size: 1.25rem;
+    color: #2c3e50; /* Dark navy/charcoal like image */
+}
+
+.faq-icon {
+    font-size: 0.8rem;
+    color: #2c3e50;
+    transition: transform 0.4s ease;
+}
+
+/* Sliding Content */
+.faq-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s cubic-bezier(0, 1, 0, 1);
+}
+
+.faq-content p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: #555;
+    padding-bottom: 30px; /* Spacing below answer */
+}
+
+/* Active State */
+.faq-item.active .faq-content {
+    max-height: 1000px; /* High enough to contain any text */
+    transition: max-height 0.4s ease-in-out;
+}
+
+.faq-item.active .faq-icon {
+    transform: rotate(180deg);
+}
+
+.faq-item:hover .faq-question {
+    color: var(--gold);
+}
+
+@media (max-width: 600px) {
+    .faq-question {
+        font-size: 1.1rem;
+        padding-right: 15px;
+    }
+}
+
+/* --- ENTOURAGE: DARK STRUCTURED CARDS --- */
+/* 
+.entourage-section {
+    position: relative;
+    background-color: #0a0a0a; 
+    padding: 140px 0;
+    overflow: hidden;
+    text-align: center;
+}
+
+
+.royal-glass-card {
+    background: rgba(15, 15, 15, 0.6);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: 200px 200px 20px 20px;
+    padding: 80px 40px 50px;
+    box-shadow: 
+        0 0 30px rgba(0,0,0,0.5),
+        inset 0 0 20px rgba(212, 175, 55, 0.05); 
+    transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.royal-glass-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    border-color: var(--gold);
+    box-shadow: 0 20px 40px rgba(212, 175, 55, 0.15);
+}
+
+.royal-glass-card::before {
+    content: '';
+    position: absolute;
+    top: -10%;
+    left: 50%;
+    width: 120%;
+    height: 120%;
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.08) 0%, transparent 70%);
+    transform: translateX(-50%);
+    z-index: -1;
+    pointer-events: none;
+}
+
+
+.card-structure-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+.side-col {
+    flex: 1;
+}
+
+.vertical-gold-line {
+    width: 1px;
+    height: 120px;
+    background: linear-gradient(to bottom, transparent, var(--gold), transparent);
+    opacity: 0.4;
+}
+
+.card-triple-structure {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 40px;
+}
+
+
+.card-script-gold {
+    font-family: 'Great Vibes', cursive;
+    font-size: 3.2rem;
+    color: var(--gold);
+    margin-bottom: 35px;
+}
+
+.role-label-gold {
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 4px;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    font-weight: 600;
+    opacity: 0.9;
+}
+
+.name-display-white {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    color: #fff; 
+    line-height: 1.5;
+    font-weight: 300;
+}
+
+.name-script-white {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2.8rem;
+    color: #fff;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+}
+
+.name-simple-white {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 8px;
+}
+
+
+.party-label-gold {
+    font-family: 'Cinzel', serif;
+    font-size: 1.1rem;
+    color: var(--gold);
+    letter-spacing: 3px;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+}
+
+.party-list-white {
+    list-style: none;
+    padding: 0;
+}
+
+.party-list-white li {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 2.4;
+}
+
+
+@media (max-width: 768px) {
+    .royal-glass-card {
+        width: 95%;
+        padding: 50px 20px;
+    }
+
+    .card-structure-row, .card-triple-structure {
+        flex-direction: column;
+        display: flex;
+        gap: 40px;
+    }
+
+    .vertical-gold-line {
+        width: 60%;
+        height: 1px;
+        margin: 0 auto;
+        background: linear-gradient(to right, transparent, var(--gold), transparent);
+    }
+} */
+
+/* --- BALANCED CELESTIAL ENTOURAGE --- */
+
+.entourage-section {
+    background-color: #050505;
+    padding: 140px 0;
+    position: relative;
+    overflow: hidden;
+    color: #fff;
+    text-align: center;
+}
+
+.glow-orb {
+    position: absolute;
+    top: 30%; left: 50%;
+    width: 800px; height: 800px;
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.05) 0%, transparent 70%);
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* SECTION HEADERS */
+.e-header { position: relative; z-index: 2; margin-bottom: 80px; }
+.e-sup {
+    font-family: 'Montserrat', sans-serif; font-size: 0.75rem;
+    letter-spacing: 6px; text-transform: uppercase; color: #d4af37;
+    display: block; margin-bottom: 15px;
+}
+.e-title {
+    font-family: 'Cinzel', serif; font-size: clamp(2.5rem, 6vw, 4.5rem);
+    letter-spacing: 15px; text-transform: uppercase;
+    background: linear-gradient(to right, #bf953f, #fcf6ba, #b38728);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+}
+.e-line {
+    width: 80px; height: 1px;
+    background: linear-gradient(90deg, transparent, #d4af37, transparent);
+    margin: 25px auto 0; opacity: 0.6;
+}
+
+.e-group-label {
+    font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.2rem;
+    color: rgba(255,255,255,0.4); margin-bottom: 60px; letter-spacing: 3px;
+}
+
+/* PARENTS (The Pillars) */
+.e-flex-row {
+    display: flex; justify-content: center; align-items: baseline;
+    max-width: 1200px; margin: 0 auto 120px;
+}
+.e-member { flex: 1; padding: 0 20px; }
+.e-role {
+    font-family: 'Montserrat', sans-serif; font-size: 0.7rem;
+    letter-spacing: 4px; text-transform: uppercase; color: #d4af37;
+    display: block; margin-bottom: 25px;
+}
+.e-name {
+    font-family: 'Playfair Display', serif; font-size: 2.2rem;
+    font-weight: 400; line-height: 1.4; color: #fff;
+}
+
+/* PRIMARY WITNESSES LIST */
+.e-sponsors-list {
+    max-width: 900px; margin: 0 auto 120px;
+    font-family: 'Montserrat', sans-serif; font-size: 1.3rem;
+    line-height: 2.5; font-weight: 300; letter-spacing: 1px;
+    color: rgba(255,255,255,0.9);
+}
+.e-dot { color: #d4af37; margin: 0 15px; font-size: 1rem; opacity: 0.6; }
+
+/* PRINCIPAL WITNESSES (Best Man & MOH) */
+.e-witness-section {
+    display: flex; align-items: baseline; justify-content: center;
+    max-width: 1200px; margin: 0 auto 120px;
+}
+.e-member-highlight { flex: 1; padding: 0 10px; }
+.e-role-alt {
+    font-family: 'Cinzel', serif; font-size: 0.8rem;
+    letter-spacing: 5px; color: #d4af37; display: block; margin-bottom: 15px;
+}
+.e-name-lg {
+    font-family: 'Great Vibes', cursive; font-size: 3.8rem !important;
+    color: #fff; margin: 0; line-height: 1;
+}
+.e-diamond-divider { color: #d4af37; font-size: 1.2rem; padding: 0 40px; opacity: 0.5; align-self: center; }
+
+/* WEDDING PARTY LISTS */
+.e-grid-container {
+    display: grid; grid-template-columns: 1fr 1fr;
+    max-width: 1000px; margin: 0 auto 120px;
+    border-top: 1px solid rgba(212, 175, 55, 0.1); padding-top: 80px;
+}
+.e-sub-label {
+    font-family: 'Cinzel', serif; font-size: 1.3rem;
+    letter-spacing: 8px; color: #d4af37; margin-bottom: 40px; text-transform: uppercase;
+}
+.e-list { list-style: none; padding: 0; }
+.e-list li {
+    font-family: 'Montserrat', sans-serif; font-size: 1.3rem;
+    font-weight: 300; line-height: 2.4; letter-spacing: 1.5px;
+    color: rgba(255,255,255,0.9);
+}
+
+/* PATH BEARERS (Secondary) */
+.e-path-grid {
+    display: flex; justify-content: center; align-items: flex-start;
+    max-width: 1100px; margin: 0 auto; gap: 40px;
+}
+.e-path-item { flex: 1; }
+.e-role-sm {
+    display: block; font-family: 'Montserrat', sans-serif; font-size: 0.85rem;
+    letter-spacing: 4px; text-transform: uppercase; color: #d4af37;
+    font-weight: 600; margin-bottom: 15px;
+}
+.e-path-item p {
+    font-family: 'Montserrat', sans-serif; font-size: 1.2rem;
+    font-weight: 300; line-height: 1.6; color: rgba(255,255,255,0.8);
+}
+
+/* MOBILE FIXES */
+@media (max-width: 850px) {
+    .e-flex-row, .e-witness-section { flex-direction: column; align-items: center; gap: 60px; }
+    .e-name { font-size: 1.8rem; }
+    .e-name-lg { font-size: 3.2rem !important; }
+    .e-grid-container { grid-template-columns: 1fr; gap: 80px; }
+    .e-path-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+    .e-list li, .e-path-item p, .e-sponsors-list { font-size: 1.1rem; }
+    .e-dot { display: block; margin: 10px 0; } /* Stacks sponsors nicely on mobile */
+}
+
+/* --- ENTOURAGE UPDATED STYLES --- */
+.e-group {
+    margin-bottom: 80px;
+    position: relative;
+    z-index: 2;
+}
+
+.e-script-label {
+    font-family: 'Great Vibes', cursive;
+    font-size: 3rem;
+    color: var(--gold);
+    margin-bottom: 5px;
+}
+
+.e-sub-tag {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.65rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.5);
+    margin-bottom: 40px;
+}
+
+.e-dual-column {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.e-triple-column {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 30px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.e-name-sm {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 300;
+    line-height: 1.8;
+    color: #fff;
+    margin-bottom: 5px;
+}
+
+.e-script-gold {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2.5rem;
+    color: var(--gold);
+    display: block;
+    margin-bottom: 10px;
+}
+
+.e-script-gold-sm {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2.2rem;
+    color: var(--gold);
+    margin-bottom: 20px;
+}
+
+.e-role-italic {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2rem;
+    color: var(--gold);
+    display: block;
+}
+
+.e-task {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.55rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.5);
+    display: block;
+    margin-bottom: 15px;
+}
+
+.e-list-plain {
+    list-style: none;
+    padding: 0;
+}
+
+.e-list-plain li {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 300;
+    line-height: 2;
+    letter-spacing: 1px;
+}
+
+.e-flower-girls {
+    margin-top: 15px;
+}
+
+/* RESPONSIVE TWEAKS */
+@media (max-width: 850px) {
+    .e-dual-column, .e-triple-column {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .e-witness-section {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .e-name-lg {
+        font-size: 3rem !important;
+    }
+
+    .parents-row {
+        flex-direction: column;
+        gap: 40px;
     }
 }
