@@ -519,7 +519,7 @@
                 <!-- Question 1 -->
                 <div class="faq-item">
                     <button class="faq-header">
-                        <span class="faq-question">Where shall we stable our carriages?</span>
+                        <span class="faq-question">Where is the designated parking area?</span>
                         <span class="faq-icon">▼</span>
                     </button>
                     <div class="faq-content">
@@ -659,7 +659,69 @@
                 <div class="gold-corner bl"></div>
                 <div class="gold-corner br"></div>
 
+
                 <div class="rsvp-inner-content">
+                    <h2 class="rsvp-header-main">KINDLY RESPOND</h2>
+                    <div class="rsvp-script-wrap">
+                        <p class="rsvp-script-text">Your presence is the greatest gift of all.</p>
+                        <p class="rsvp-script-text">Please let us know if you can join our celebration.</p>
+                    </div>
+
+                    <!-- The form now has 'name' tags matching your Sheet headers -->
+                    <form class="magic-rsvp-form" id="weddingRSVP">
+                        <div class="rsvp-row">
+                            <div class="input-container">
+                                <label class="gold-label">FULL NAME</label>
+                                <input type="text" name="Full Name" placeholder="Your Full Name" required>
+                                <div class="input-line-gold"></div>
+                            </div>
+                        </div>
+
+                        <div class="rsvp-row">
+                            <div class="input-container">
+                                <label class="gold-label">ATTENDANCE</label>
+                                <select name="Attendance" required>
+                                    <option value="" disabled selected>Please select...</option>
+                                    <option value="Joyfully Accepts">Joyfully Accepts</option>
+                                    <option value="Regretfully Declines">Regretfully Declines</option>
+                                </select>
+                                <div class="input-line-gold"></div>
+                            </div>
+                        </div>
+
+                        <div class="rsvp-row">
+                            <div class="input-container">
+                                <label class="gold-label">NUMBER OF GUESTS</label>
+                                <input type="number" name="Guests" min="0" max="10" placeholder="0">
+                                <div class="input-line-gold"></div>
+                            </div>
+                        </div>
+
+                        <div class="rsvp-row">
+                            <div class="input-container">
+                                <label class="gold-label">A MESSAGE FOR THE COUPLE</label>
+                                <textarea name="Message" rows="1" placeholder="Share a message for us"></textarea>
+                                <div class="input-line-gold"></div>
+                            </div>
+                        </div>
+
+                        <div class="rsvp-action-centered">
+                            <button type="submit" class="rsvp-btn-luxury">
+                                SEND RESPONSE
+                            </button>
+                        </div>
+                    </form>
+
+                    <!-- This is the "Thank You" message that will appear -->
+                    <div id="rsvpSuccess" style="display: none; text-align: center; padding: 40px 0;">
+                        <h2 class="rsvp-header-main">THANK YOU!</h2>
+                        <p class="rsvp-script-text">Your response has been sent to Janrell & Mica.</p>
+                        <div class="floral-ornament">✨</div>
+                    </div>
+
+                    <p class="rsvp-deadline-text">Kindly reply by July 30, 2026</p>
+                </div>
+                <!-- <div class="rsvp-inner-content">
                     <h2 class="rsvp-header-main">KINDLY RESPOND</h2>
                     <div class="rsvp-script-wrap">
                         <p class="rsvp-script-text">Your presence is the greatest gift of all.</p>
@@ -710,8 +772,13 @@
                         </div>
                     </form>
 
+                    <div id="rsvpSuccess" style="display: none; text-align: center; padding: 20px;">
+                        <h2 class="rsvp-header-main">THANK YOU!</h2>
+                        <p class="rsvp-script-text">Your response has been successfully sent.</p>
+                        <div class="floral-ornament">✨</div>
+                    </div>
                     <p class="rsvp-deadline-text">Kindly reply by July 30, 2026</p>
-                </div>
+                </div> -->
             </div>
         </div>
     </section>

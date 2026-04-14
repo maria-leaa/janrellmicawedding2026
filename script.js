@@ -1,5 +1,5 @@
-document.addEventListener('DOMContentLoaded', function() {
-    
+document.addEventListener('DOMContentLoaded', function () {
+
     // --- 1. PARTICLE MAGIC (Gold Sparkles) ---
     const canvas = document.getElementById('canvas');
     if (canvas) {
@@ -69,10 +69,10 @@ document.addEventListener('DOMContentLoaded', function() {
         const mEl = document.getElementById("mins");
         const sEl = document.getElementById("secs");
 
-        if(dEl) dEl.innerText = d.toString().padStart(2, '0');
-        if(hEl) hEl.innerText = h.toString().padStart(2, '0');
-        if(mEl) mEl.innerText = m.toString().padStart(2, '0');
-        if(sEl) sEl.innerText = s.toString().padStart(2, '0');
+        if (dEl) dEl.innerText = d.toString().padStart(2, '0');
+        if (hEl) hEl.innerText = h.toString().padStart(2, '0');
+        if (mEl) mEl.innerText = m.toString().padStart(2, '0');
+        if (sEl) sEl.innerText = s.toString().padStart(2, '0');
     }, 1000);
 
     // --- 3. MOBILE NAVBAR LOGIC ---
@@ -125,7 +125,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const extraImages = document.querySelectorAll('.gallery-item.extra');
 
     if (galleryToggle) {
-        galleryToggle.addEventListener('click', function() {
+        galleryToggle.addEventListener('click', function () {
             const isHidden = galleryToggle.getAttribute('data-state') === 'hidden';
 
             if (isHidden) {
@@ -148,19 +148,67 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // --- 6. RSVP FORM LOGIC ---
+    // const rsvpForm = document.getElementById('weddingRSVP');
+    // const rsvpSuccess = document.getElementById('rsvpSuccess');
+    // if (rsvpForm) {
+    //     rsvpForm.addEventListener('submit', function(e) {
+    //         e.preventDefault();
+    //         rsvpForm.classList.add('submitting');
+    //         setTimeout(() => {
+    //             rsvpForm.style.display = 'none';
+    //             document.querySelector('.rsvp-section .foil-title').style.display = 'none';
+    //             document.querySelector('.rsvp-intro-light').style.display = 'none';
+    //             rsvpSuccess.style.display = 'block';
+    //             document.getElementById('rsvp').scrollIntoView({ behavior: 'smooth' });
+    //         }, 600);
+    //     });
+    // }
+
+    // --- 6. RSVP FORM LOGIC (Google Sheets Integrated) ---
     const rsvpForm = document.getElementById('weddingRSVP');
     const rsvpSuccess = document.getElementById('rsvpSuccess');
+    const rsvpHeader = document.querySelector('.rsvp-header-main');
+    const rsvpText = document.querySelector('.rsvp-script-wrap');
+    const rsvpDeadline = document.querySelector('.rsvp-deadline-text');
+
+    // Your specific Apps Script URL
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbzEzedIOiaP8AEf8H_wnuIXLHOvB26UR2cDH7IEPJ7nKiIgWglOUHU8kOiqktKS3yKF/exec';
+
     if (rsvpForm) {
-        rsvpForm.addEventListener('submit', function(e) {
+        rsvpForm.addEventListener('submit', e => {
             e.preventDefault();
-            rsvpForm.classList.add('submitting');
-            setTimeout(() => {
-                rsvpForm.style.display = 'none';
-                document.querySelector('.rsvp-section .foil-title').style.display = 'none';
-                document.querySelector('.rsvp-intro-light').style.display = 'none';
-                rsvpSuccess.style.display = 'block';
-                document.getElementById('rsvp').scrollIntoView({ behavior: 'smooth' });
-            }, 600);
+
+            // Show loading state
+            const submitBtn = rsvpForm.querySelector('button');
+            submitBtn.disabled = true;
+            submitBtn.innerText = "SENDING...";
+
+            // Send data to Google Sheets
+            fetch(scriptURL, {
+                method: 'POST',
+                body: new FormData(rsvpForm)
+            })
+                .then(response => {
+                    console.log('Success!', response);
+
+                    // 1. Hide the form and text
+                    rsvpForm.style.display = 'none';
+                    if (rsvpHeader) rsvpHeader.style.display = 'none';
+                    if (rsvpText) rsvpText.style.display = 'none';
+                    if (rsvpDeadline) rsvpDeadline.style.display = 'none';
+
+                    // 2. Show the Success message
+                    if (rsvpSuccess) rsvpSuccess.style.display = 'block';
+
+                    // 3. Scroll to the top of the RSVP section
+                    document.getElementById('rsvp').scrollIntoView({ behavior: 'smooth' });
+                })
+                .catch(error => {
+                    console.error('Error!', error.message);
+                    submitBtn.disabled = false;
+                    submitBtn.innerText = "TRY AGAIN";
+                    alert("Sorry, there was an error sending your response. Please try again.");
+                });
         });
     }
 
@@ -173,8 +221,8 @@ document.addEventListener('DOMContentLoaded', function() {
     if (overlay) document.body.classList.add('no-scroll');
 
     if (openBtn) {
-        openBtn.addEventListener('click', function() {
-            if(music) music.play().catch(() => {});
+        openBtn.addEventListener('click', function () {
+            if (music) music.play().catch(() => { });
             overlay.classList.add('hidden');
             document.body.classList.remove('no-scroll');
             setTimeout(() => { overlay.style.display = 'none'; }, 1500);
@@ -194,7 +242,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     const backToTopBtn = document.getElementById('backToTop');
-    if(backToTopBtn) {
+    if (backToTopBtn) {
         backToTopBtn.addEventListener('click', () => {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
@@ -202,23 +250,23 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // --- FAQ ACCORDION LOGIC ---
-    const faqItems = document.querySelectorAll('.faq-item');
+const faqItems = document.querySelectorAll('.faq-item');
 
-    faqItems.forEach(item => {
-        const header = item.querySelector('.faq-header');
-        header.addEventListener('click', () => {
-            // Check if this item is already open
-            const isOpen = item.classList.contains('active');
+faqItems.forEach(item => {
+    const header = item.querySelector('.faq-header');
+    header.addEventListener('click', () => {
+        // Check if this item is already open
+        const isOpen = item.classList.contains('active');
 
-            // Close all other items (Optional: remove this if you want multiple open at once)
-            faqItems.forEach(otherItem => otherItem.classList.remove('active'));
+        // Close all other items (Optional: remove this if you want multiple open at once)
+        faqItems.forEach(otherItem => otherItem.classList.remove('active'));
 
-            // Toggle current item
-            if (!isOpen) {
-                item.classList.add('active');
-            }
-        });
+        // Toggle current item
+        if (!isOpen) {
+            item.classList.add('active');
+        }
     });
+});
 
 
 
@@ -228,7 +276,7 @@ document.addEventListener('mousemove', (e) => {
         const x = e.clientX;
         const y = e.clientY;
         // Moves the orb slowly toward the mouse for a "dreamy" look
-        orb.style.transform = `translate(calc(-50% + ${x/50}px), calc(-50% + ${y/50}px))`;
+        orb.style.transform = `translate(calc(-50% + ${x / 50}px), calc(-50% + ${y / 50}px))`;
     }
 });
 
