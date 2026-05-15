@@ -450,7 +450,7 @@ body.no-scroll {
 
 .hero {
     height: 100vh;
-    background: url('hero.png') no-repeat center center;
+    background: url('hero.jpg') no-repeat center center;
     background-size: cover;
     display: flex;
     align-items: center;
