@@ -2922,39 +2922,39 @@ html, body {
     }
 } */
 
-/* --- BULLETPROOF RESPONSIVE COUNTDOWN --- */
+/* --- UNIVERSAL SINGLE-ROW COUNTDOWN --- */
 .glass-wrapper {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
     border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 15px;
-    padding: 25px;
+    border-radius: 12px;
+    padding: 20px 30px;
     display: inline-block;
     margin: 30px auto;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
     width: auto;
-    max-width: 90%; /* Ensures it doesn't hit screen edges on mobile */
+    max-width: 95%; /* Ensures it never touches screen edges */
+    box-sizing: border-box;
 }
 
 .countdown-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 columns for Desktop */
-    gap: 0;
+    display: flex; /* Flex is more fluid for single-row sizing */
+    justify-content: center;
     align-items: center;
+    width: 100%;
 }
 
 .count-box {
-    padding: 0 20px;
     text-align: center;
+    padding: 0 20px;
     position: relative;
+    flex: 1; /* Distributes space equally */
 }
 
-/* Vertical Divider for Desktop (visible only when in 4-column mode) */
-@media (min-width: 601px) {
-    .count-box:not(:last-child) {
-        border-right: 1px solid rgba(255, 255, 255, 0.2);
-    }
+/* Vertical Divider for all screens */
+.count-box:not(:last-child) {
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .count-box span {
@@ -2969,58 +2969,54 @@ html, body {
 .count-box p {
     font-size: 0.65rem;
     letter-spacing: 2px;
-    color: var(--gold, #d4af37);
+    color: #d4af37;
     margin-top: 8px;
     text-transform: uppercase;
-    font-weight: 400;
+    white-space: nowrap; /* Prevents labels from breaking into 2 lines */
 }
 
-/* MOBILE FIX (Snap to 2x2 Grid) */
+/* TABLET VIEW (iPad/Small Laptops) */
+@media (max-width: 992px) {
+    .count-box {
+        padding: 0 15px;
+    }
+    .count-box span {
+        font-size: 2.2rem;
+    }
+}
+
+/* NORMAL MOBILE VIEW (iPhone, Samsung Galaxy, etc.) */
 @media (max-width: 600px) {
     .glass-wrapper {
-        padding: 20px 10px;
-        width: 100%;
-        max-width: 280px; /* Forces a nice compact square on mobile */
-    }
-
-    .countdown-grid {
-        grid-template-columns: repeat(2, 1fr); /* 2 columns for Mobile */
-        row-gap: 20px; /* Adds space between the top and bottom rows */
+        padding: 12px 10px;
+        border-radius: 8px;
     }
 
     .count-box {
-        padding: 0;
-    }
-
-    /* Add dividers for 2x2 grid look */
-    .count-box:nth-child(odd) {
-        border-right: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    /* Add a horizontal divider between rows */
-    .count-box:nth-child(1), 
-    .count-box:nth-child(2) {
-        border-bottom: none; /* Keep it clean */
-        padding-bottom: 5px;
+        padding: 0 8px; /* Tighten the gaps */
     }
 
     .count-box span {
-        font-size: 2rem; /* Sized perfectly for mobile */
+        font-size: 1.5rem; /* Shrinks to fit screen width */
     }
 
     .count-box p {
-        font-size: 0.6rem;
+        font-size: 0.45rem;
         letter-spacing: 1px;
         margin-top: 4px;
     }
 }
 
-/* Extra small screen adjustment */
+/* EXTRA SMALL MOBILE (iPhone SE, small Androids < 350px) */
 @media (max-width: 350px) {
-    .glass-wrapper {
-        max-width: 240px;
+    .count-box {
+        padding: 0 5px;
     }
     .count-box span {
-        font-size: 1.7rem;
+        font-size: 1.25rem; /* Even smaller for tiny screens */
+    }
+    .count-box p {
+        font-size: 0.4rem;
+        letter-spacing: 0.5px;
     }
 }
