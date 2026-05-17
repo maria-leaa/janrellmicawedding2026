@@ -393,10 +393,10 @@ body.no-scroll {
         justify-content: center;
     }
 
-    .glass-wrapper {
+    /* .glass-wrapper {
         padding: 15px 25px;
         width: 90%;
-    }
+    } */
 
     .navbar {
         padding: 15px 30px;
@@ -562,7 +562,7 @@ body.no-scroll {
     font-size: 0.85rem;
 }
 
-.glass-wrapper {
+/* .glass-wrapper {
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
@@ -572,7 +572,7 @@ body.no-scroll {
     display: inline-block;
     margin: 40px 0;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
-}
+} */
 
 .countdown-row {
     display: flex;
@@ -1956,11 +1956,11 @@ footer {
     }
 
     /* 2. Fix the Countdown (Forces 1 line) */
-    .glass-wrapper {
+    /* .glass-wrapper {
         padding: 12px 10px !important;
         width: 95%;
         margin: 20px 0;
-    }
+    } */
 
     .countdown-row {
         gap: 5px !important;
@@ -2118,14 +2118,14 @@ footer {
     }
 
     /* 3. Fix Countdown Container */
-    .glass-wrapper {
+    /* .glass-wrapper {
         width: 95% !important;
         padding: 12px 5px !important;
         border-radius: 12px !important;
         margin: 20px auto !important;
         background: rgba(255, 255, 255, 0.08) !important;
         backdrop-filter: blur(10px) !important;
-    }
+    } */
 
     .countdown-row {
         gap: 0 !important;
@@ -2224,10 +2224,10 @@ footer {
     }
 
     /* 5. Fix Countdown to stay on 1 line */
-    .glass-wrapper {
+    /* .glass-wrapper {
         width: 98% !important;
         padding: 15px 2px !important;
-    }
+    } */
 
     .count-item span {
         font-size: 1.4rem !important;
@@ -2832,5 +2832,93 @@ html, body {
     
     .e-name-lg {
         font-size: 2.4rem !important;
+    }
+}
+
+/* --- MODERN RESPONSIVE COUNTDOWN --- */
+.glass-wrapper {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 30px;
+    border-radius: 20px; /* Changed from 100px to a soft rectangle */
+    display: inline-block;
+    margin: 40px auto;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+}
+
+.countdown-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 in a row for desktop */
+    gap: 20px;
+    align-items: center;
+}
+
+.count-box {
+    position: relative;
+    padding: 10px 20px;
+    min-width: 100px;
+}
+
+/* Add a subtle vertical divider between boxes, but not after the last one */
+.count-box:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    right: -10px;
+    top: 20%;
+    height: 60%;
+    width: 1px;
+    background: linear-gradient(to bottom, transparent, var(--gold), transparent);
+    opacity: 0.5;
+}
+
+.count-box span {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3rem;
+    font-weight: 200;
+    display: block;
+    color: #fff;
+    line-height: 1;
+}
+
+.count-box p {
+    font-size: 0.7rem;
+    letter-spacing: 3px;
+    color: var(--gold);
+    margin-top: 8px;
+    text-transform: uppercase;
+}
+
+/* MOBILE FIX FOR COUNTDOWN */
+@media (max-width: 600px) {
+    .glass-wrapper {
+        padding: 20px;
+        width: 90%;
+        border-radius: 15px;
+    }
+
+    .countdown-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2x2 grid on mobile */
+        gap: 15px;
+    }
+
+    .count-box {
+        min-width: auto;
+        padding: 10px;
+    }
+
+    /* Hide the vertical dividers on mobile grid view */
+    .count-box:after {
+        display: none;
+    }
+
+    .count-box span {
+        font-size: 2.2rem; /* Scaled down for mobile */
+    }
+
+    .count-box p {
+        font-size: 0.6rem;
+        letter-spacing: 2px;
     }
 }
